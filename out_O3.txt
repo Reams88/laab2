@@ -1,0 +1,128 @@
+
+===== n = 100000 + 100000 elements =====
+Library merge, operator<:
+  no policy                               1.30 ms
+  seq                                     1.32 ms
+  unseq                                   1.33 ms
+  par                                     0.11 ms
+  par_unseq                               0.11 ms
+Library merge, heavy predicate (sqrt):
+  no policy                               3.29 ms
+  seq                                     3.23 ms
+  unseq                                   3.18 ms
+  par                                     0.25 ms
+  par_unseq                               0.25 ms
+Own parallel merge, operator< (hardware threads = 24):
+      K    time, ms   speedup  correct
+      1        2.20      1.00      yes
+      2        1.21      1.82      yes
+      3        1.03      2.14      yes
+      4        0.67      3.29      yes
+      6        0.55      4.00      yes
+      8        0.39      5.61      yes
+     12        0.44      4.96      yes
+     16        0.50      4.38      yes
+     20        0.57      3.89      yes
+     24        0.75      2.95      yes
+     32        0.98      2.23      yes
+     48        1.22      1.80      yes
+     64        1.87      1.18      yes
+     96        3.06      0.72      yes
+    128        3.66      0.60      yes
+  best K = 8 (0.39 ms); K / hardware threads = 0.33
+
+===== n = 1000000 + 1000000 elements =====
+Library merge, operator<:
+  no policy                              13.19 ms
+  seq                                    13.35 ms
+  unseq                                  13.55 ms
+  par                                     0.84 ms
+  par_unseq                               0.86 ms
+Library merge, heavy predicate (sqrt):
+  no policy                              33.01 ms
+  seq                                    32.44 ms
+  unseq                                  32.23 ms
+  par                                     2.16 ms
+  par_unseq                               2.16 ms
+Own parallel merge, operator< (hardware threads = 24):
+      K    time, ms   speedup  correct
+      1       17.40      1.00      yes
+      2        9.18      1.89      yes
+      3        6.72      2.59      yes
+      4        5.24      3.32      yes
+      6        3.69      4.72      yes
+      8        3.11      5.59      yes
+     12        2.33      7.46      yes
+     16        2.28      7.64      yes
+     20        1.91      9.12      yes
+     24        2.02      8.62      yes
+     32        2.32      7.49      yes
+     48        2.39      7.27      yes
+     64        3.02      5.76      yes
+     96        3.46      5.03      yes
+    128        3.37      5.16      yes
+  best K = 20 (1.91 ms); K / hardware threads = 0.83
+
+===== n = 5000000 + 5000000 elements =====
+Library merge, operator<:
+  no policy                              66.44 ms
+  seq                                    67.35 ms
+  unseq                                  67.70 ms
+  par                                     4.22 ms
+  par_unseq                               4.34 ms
+Library merge, heavy predicate (sqrt):
+  no policy                             165.41 ms
+  seq                                   162.18 ms
+  unseq                                 161.69 ms
+  par                                    10.65 ms
+  par_unseq                              13.31 ms
+Own parallel merge, operator< (hardware threads = 24):
+      K    time, ms   speedup  correct
+      1       72.29      1.00      yes
+      2       45.31      1.60      yes
+      3       31.52      2.29      yes
+      4       24.89      2.90      yes
+      6       17.93      4.03      yes
+      8       14.61      4.95      yes
+     12        9.55      7.57      yes
+     16        7.84      9.22      yes
+     20        6.31     11.45      yes
+     24        7.52      9.61      yes
+     32        6.23     11.60      yes
+     48        8.15      8.87      yes
+     64        8.18      8.84      yes
+     96        7.04     10.27      yes
+    128        7.85      9.21      yes
+  best K = 32 (6.23 ms); K / hardware threads = 1.33
+
+===== n = 20000000 + 20000000 elements =====
+Library merge, operator<:
+  no policy                             265.54 ms
+  seq                                   269.70 ms
+  unseq                                 271.50 ms
+  par                                    17.18 ms
+  par_unseq                              20.30 ms
+Library merge, heavy predicate (sqrt):
+  no policy                             661.79 ms
+  seq                                   649.06 ms
+  unseq                                 646.97 ms
+  par                                    53.64 ms
+  par_unseq                              55.58 ms
+Own parallel merge, operator< (hardware threads = 24):
+      K    time, ms   speedup  correct
+      1      272.12      1.00      yes
+      2      136.52      1.99      yes
+      3       95.17      2.86      yes
+      4       74.63      3.65      yes
+      6       49.87      5.46      yes
+      8       43.59      6.24      yes
+     12       33.20      8.20      yes
+     16       24.78     10.98      yes
+     20       20.45     13.31      yes
+     24       22.36     12.17      yes
+     32       22.96     11.85      yes
+     48       21.55     12.63      yes
+     64       21.04     12.93      yes
+     96       21.07     12.91      yes
+    128       21.69     12.55      yes
+  best K = 20 (20.45 ms); K / hardware threads = 0.83
